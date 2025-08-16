@@ -1,3 +1,4 @@
 FROM node:20-slim
 
-RUN npm i -g pnpm@^10
+RUN corepack enable
+RUN corepack prepare pnpm@^10 --activate
