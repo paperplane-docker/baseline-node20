@@ -6,7 +6,7 @@ workspace:
 
 environment:
   IMAGE_NAME: baseline-node20
-  PUSHRM_SHORT: Node 20 with pnpm v10.
+  PUSHRM_SHORT: Node 20 and pnpm v10 are preinstalled, compatible with canvas.
   COMMIT_TAG: ${DRONE_COMMIT_SHA:0:8}
   VERSION_TAG: ${DRONE_SEMVER##v}
   OFFICIAL_PREFIX: paperplanecc
