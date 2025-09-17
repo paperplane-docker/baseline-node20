@@ -29,6 +29,6 @@ steps:
       PUSHRM_TARGET: docker.io/paperplanecc/baseline-node20
       DOCKER_USER: paperplanecc
       DOCKER_PASS:
-        from_secret: DOCKER_PASS
+        from_secret: DOCKER_PASSWORD
     commands:
       - /docker-pushrm
