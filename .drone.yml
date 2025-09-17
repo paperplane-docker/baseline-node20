@@ -19,5 +19,16 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
-      - "chmod +x ./build.sh"
-      - "./build.sh"
+      - 'chmod +x ./build.sh'
+      - './build.sh'
+
+  - name: publish-official-readme
+    image: chko/docker-pushrm:1
+    environment:
+      PUSHRM_SHORT: Node 20 and pnpm are preinstalled, compatible with canvas, weekly synchronization.
+      PUSHRM_TARGET: docker.io/paperplanecc/baseline-node20
+      DOCKER_USER: paperplanecc
+      DOCKER_PASS:
+        from_secret: DOCKER_PASS
+    commands:
+      - /docker-pushrm
