@@ -4,9 +4,7 @@ PNPM_VERSION=$(docker run --rm curlimages/curl -s https://registry.npmjs.org/pnp
 
 COMBINE_VERSION="node${NODE_VERSION}-pnpm${PNPM_VERSION}"
 
-docker pull --dry-run "paperplanecc/baseline-node20:$COMBINE_VERSION" > /dev/null 2>&1
-
-if [ $? -eq 0 ]; then
+if ! docker manifest inspect "paperplanecc/baseline-node20:$COMBINE_VERSION" > /dev/null 2>&1; then
   docker buildx build --platform linux/amd64,linux/arm64 --progress plain --compress --build-arg NODE_VERSION=$NODE_VERSION --build-arg PNPM_VERSION=$PNPM_VERSION -t paperplanecc/baseline-node20:$CALVER .
 
   docker login -u paperplanecc -p $DOCKER_PASS
