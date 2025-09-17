@@ -19,4 +19,5 @@ steps:
       - name: dockersock
         path: /var/run/docker.sock
     commands:
+      - "chmod +x ./build.sh"
       - "./build.sh"
