@@ -2,7 +2,7 @@
 
 现在 Node.js 的 Baseline 系列镜像已转移至 [paperplane-docker/baseline-node](https://github.com/paperplane-docker/baseline-node) 仓库。
 
-# PaperPlane Docker Baseline-Node20 [![Build Status](https://drone.paperplane.cc/api/badges/paperplane-docker/baseline-node20/status.svg)](https://drone.paperplane.cc/paperplane-docker/baseline-node20)
+# PaperPlane Docker Baseline-Node20
 
 本镜像 [`paperplanecc/baseline-node20`](https://hub.docker.com/r/paperplanecc/baseline-node20) 为 Node.js 和前端开发者提供开发镜像。
 
