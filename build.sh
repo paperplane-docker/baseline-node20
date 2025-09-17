@@ -1,5 +1,3 @@
-#!/bin/bash
-
 CALVER=$(date +%Y%m%d)
 NODE_VERSION=$(docker run --rm curlimages/curl -s https://nodejs.org/dist/index.json | grep -o '"version":"v20[^"]*"' | head -1 | sed 's/"version":"v//;s/"//')
 PNPM_VERSION=$(docker run --rm curlimages/curl -s https://registry.npmjs.org/pnpm/latest | grep -o '"version":"[^"]*' | cut -d'"' -f4)
