@@ -1,10 +1,6 @@
 kind: pipeline
 name: default
 
-environment:
-  DOCKER_PASS:
-    from_secret: DOCKER_PASSWORD
-
 volumes:
   - name: dockersock
     host:
@@ -16,6 +12,9 @@ workspace:
 steps:
   - name: buildx
     image: docker:dind
+    environment:
+      DOCKER_PASS:
+        from_secret: DOCKER_PASSWORD
     volumes:
       - name: dockersock
         path: /var/run/docker.sock
