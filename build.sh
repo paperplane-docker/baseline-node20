@@ -20,5 +20,5 @@ if ! docker manifest inspect "paperplanecc/baseline-node20:$COMBINE_VERSION" > /
   docker rmi paperplanecc/baseline-node20:latest
 	docker rmi paperplanecc/baseline-node20:$COMBINE_VERSION
 
-  docker run --rm -t -e DOCKER_USER=paperplanecc -e DOCKER_PASS -e PUSHRM_TARGET=docker.io/paperplanecc/baseline-node20 -e PUSHRM_SHORT='Node 20 and pnpm are preinstalled, compatible with canvas, weekly synchronization with the latest version.' -e PUSHRM_FILE=/README.md -v ./README.md:/README.md chko/docker-pushrm:1
+  docker run --rm -t -e DOCKER_USER=paperplanecc -e DOCKER_PASS -e PUSHRM_TARGET=docker.io/paperplanecc/baseline-node20 -e PUSHRM_SHORT='Node 20 and pnpm are preinstalled, compatible with canvas, weekly synchronization.' -e PUSHRM_FILE=/README.md -v ./README.md:/README.md chko/docker-pushrm:1
 fi
